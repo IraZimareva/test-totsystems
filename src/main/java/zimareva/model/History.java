@@ -19,10 +19,13 @@ public class History {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "history_seq")
     private Long id;
 
-    /*@OneToMany(mappedBy="security")
-    @JsonIgnoreProperties("history")
-    private List<Security> securities ;*/
+    //todo: nullable?
+  /*  @ManyToOne
+    @JoinColumn(name = "sec_id")
+    @JsonIgnoreProperties("histories")
+    private Security security;*/
 
+    @Column(nullable = false)
     private String secid;
     private LocalDate tradedate;
     private Double numtrades;

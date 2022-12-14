@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import zimareva.model.parseXML.RowParse;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 
@@ -15,17 +17,19 @@ import java.util.stream.Collectors;
 public class Security {
     @Id
     private Long id;
-
-    //todo: nullable?
-/*    @ManyToOne
-    @JoinColumn(name = "sec_id")
-    @JsonIgnoreProperties("securities")
-    private History history;*/
-
     private String secid;
     private String regnumber;
     private String name;
     private String emitentTitle;
+
+    /*@OneToMany
+    @JoinColumn(name = "sec_id")
+    private List<History> histories = new ArrayList<>();*/
+
+   /* @OneToMany(mappedBy="history")
+    @JsonIgnoreProperties("security")
+    private List<History> histories ;*/
+
 
     public Security() {
     }
