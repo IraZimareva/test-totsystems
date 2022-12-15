@@ -23,7 +23,7 @@ public class Security {
     private String emitentTitle;
 
     /*@OneToMany
-    @JoinColumn(name = "sec_id")
+    @JoinColumn(name = "secid")
     private List<History> histories = new ArrayList<>();*/
 
    /* @OneToMany(mappedBy="history")

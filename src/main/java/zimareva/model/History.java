@@ -18,19 +18,18 @@ public class History {
     @SequenceGenerator(name = "history_seq", sequenceName = "history_sequence")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "history_seq")
     private Long id;
-
-    //todo: nullable?
-  /*  @ManyToOne
-    @JoinColumn(name = "sec_id")
-    @JsonIgnoreProperties("histories")
-    private Security security;*/
-
     @Column(nullable = false)
     private String secid;
     private LocalDate tradedate;
     private Double numtrades;
     private Double open;
     private Double close;
+
+    //todo: nullable?
+  /*  @ManyToOne
+    @JoinColumn(name = "sec_id")
+    @JsonIgnoreProperties("histories")
+    private Security security;*/
 
     public History() {
     }
