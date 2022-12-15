@@ -1,12 +1,8 @@
 package zimareva.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import zimareva.model.parseXML.RowParse;
+import zimareva.model.structureImportXML.RowTag;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 
 /**
@@ -21,15 +17,6 @@ public class Security {
     private String regnumber;
     private String name;
     private String emitentTitle;
-
-    /*@OneToMany
-    @JoinColumn(name = "secid")
-    private List<History> histories = new ArrayList<>();*/
-
-   /* @OneToMany(mappedBy="history")
-    @JsonIgnoreProperties("security")
-    private List<History> histories ;*/
-
 
     public Security() {
     }
@@ -74,14 +61,13 @@ public class Security {
         this.emitentTitle = emitentTitle;
     }
 
-    public static Security from(RowParse row){
+    public static Security from(RowTag row){
         Security security = new Security();
         security.setId(row.getId());
         security.setSecid(row.getSecId());
         security.setRegnumber(row.getRegnumber());
         security.setName(row.getName());
         security.setEmitentTitle(row.getEmitentTitle());
-//        box.setBoxList(boxDTO.getBoxList().stream().map(Box::from).collect(Collectors.toList()));
         return security;
     }
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
 import zimareva.exception.EntityNotFoundException;
 import zimareva.model.Security;
+import zimareva.model.dto.StockMarketDTO;
 import zimareva.repository.SecurityRepository;
 
 import javax.transaction.Transactional;
@@ -36,6 +37,10 @@ public class SecurityService {
         return StreamSupport
                 .stream(securityRepository.findAll().spliterator(), false)
                 .collect(Collectors.toList());
+    }
+
+    public List<StockMarketDTO> getSecuritiesWithHistory() {
+        return securityRepository.findSecuritiesWithHistory();
     }
 
     public void deleteSecurity(Long id) {
