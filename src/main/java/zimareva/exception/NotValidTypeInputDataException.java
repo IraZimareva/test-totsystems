@@ -1,6 +1,6 @@
 package zimareva.exception;
 
-import zimareva.model.TypeInputData;
+import zimareva.model.enumerated.TypeInputData;
 
 import java.text.MessageFormat;
 

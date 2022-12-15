@@ -1,10 +1,10 @@
-package zimareva.model.parseXML;
+package zimareva.model.structureImportXML;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "row")
-public class RowParse {
+public class RowTag {
     private Long id;
     private String secId;
     private String regnumber;
@@ -21,7 +21,7 @@ public class RowParse {
     private Integer total;
     private Integer pagesize;
 
-    public RowParse() {
+    public RowTag() {
     }
 
     public Long getId() {
@@ -143,7 +143,7 @@ public class RowParse {
 
     @Override
     public String toString() {
-        return "\n RowParse{" +
+        return "\n RowTag{" +
                 "id=" + id +
                 ", secId='" + secId + '\'' +
                 ", regnumber='" + regnumber + '\'' +

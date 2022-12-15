@@ -1,28 +1,28 @@
-package zimareva.model.parseXML;
+package zimareva.model.structureImportXML;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlRootElement(name = "document")
-public class DocumentParse {
-    private List<DataParse> data;
+public class DocumentTag {
+    private List<DataTag> data;
 
-    public DocumentParse() {
+    public DocumentTag() {
     }
 
-    public List<DataParse> getData() {
+    public List<DataTag> getData() {
         return data;
     }
 
     @XmlElement(name = "data")
-    public void setData(List<DataParse> data) {
+    public void setData(List<DataTag> data) {
         this.data = data;
     }
 
     @Override
     public String toString() {
-        return "\n DocumentParse{" +
+        return "\n DocumentTag{" +
                 "data=" + data +
                 '}';
     }

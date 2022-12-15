@@ -1,12 +1,10 @@
 package zimareva.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import zimareva.model.parseXML.RowParse;
+import zimareva.model.structureImportXML.RowTag;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 /**
  * История торгов за произвольную дату
@@ -18,13 +16,6 @@ public class History {
     @SequenceGenerator(name = "history_seq", sequenceName = "history_sequence")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "history_seq")
     private Long id;
-
-    //todo: nullable?
-  /*  @ManyToOne
-    @JoinColumn(name = "sec_id")
-    @JsonIgnoreProperties("histories")
-    private Security security;*/
-
     @Column(nullable = false)
     private String secid;
     private LocalDate tradedate;
@@ -79,14 +70,13 @@ public class History {
         this.close = close;
     }
 
-    public static History from(RowParse row){
+    public static History from(RowTag row){
         History history = new History();
         history.setSecid(row.getSecIdHistory());
         history.setNumtrades(History.parseStringToDouble(row.getNumtrades()));
         history.setOpen(History.parseStringToDouble(row.getOpen()));
         history.setClose(History.parseStringToDouble(row.getClose()));
         history.setTradedate(LocalDate.parse(row.getTradedate(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-//        box.setBoxList(boxDTO.getBoxList().stream().map(Box::from).collect(Collectors.toList()));
         return history;
     }
 

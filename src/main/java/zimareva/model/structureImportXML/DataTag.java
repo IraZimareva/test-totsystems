@@ -1,27 +1,27 @@
-package zimareva.model.parseXML;
+package zimareva.model.structureImportXML;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "data")
-public class DataParse {
-    private RowsParse rows;
+public class DataTag {
+    private RowsTag rows;
 
-    public DataParse() {
+    public DataTag() {
     }
 
-    public RowsParse getRows() {
+    public RowsTag getRows() {
         return rows;
     }
 
     @XmlElement(name = "rows")
-    public void setRows(RowsParse rows) {
+    public void setRows(RowsTag rows) {
         this.rows = rows;
     }
 
     @Override
     public String toString() {
-        return "\n DataParse{" +
+        return "\n DataTag{" +
                 "rows=" + rows +
                 '}';
     }
