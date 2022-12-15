@@ -20,7 +20,7 @@ import java.util.List;
 @Service
 public class MainService {
     private static final String SECURITIES_API_URL = "https://iss.moex.com/iss/securities.xml";
-    //or use index? https://iss.moex.com/iss/history/engines/stock/markets/index/securities.xml?date=2010-11-22
+    //or use index? https://iss.moex.com/iss/history/engines/stock/markets/index/securities.xml
     private static final String HISTORY_API_URL = "https://iss.moex.com/iss/history/engines/stock/markets/shares/securities.xml";
     private static final LocalDate HISTORY_URL_PARAMETER_DATE = LocalDate.of(2010,11,22);
 
@@ -40,7 +40,6 @@ public class MainService {
     public void importData(){
         String historyUrl = String.format("%s?date=%s", HISTORY_API_URL, HISTORY_URL_PARAMETER_DATE);
         importXMLfile(historyUrl);
-//        importXMLfile(SECURITIES_API_URL, TypeInputData.SECURITY);
     }
 
     private void importXMLfile(String filepath) {

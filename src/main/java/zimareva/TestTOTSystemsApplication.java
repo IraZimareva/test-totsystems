@@ -12,6 +12,6 @@ public class TestTOTSystemsApplication {
                 SpringApplication.run(TestTOTSystemsApplication.class, args);
         MainService mainService =
                 configurableApplicationContext.getBean(MainService.class);
-//        mainService.importData();
+        mainService.importData();
     }
 }
