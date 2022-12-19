@@ -11,8 +11,7 @@ import java.util.List;
 @Repository
 public interface SecurityRepository extends CrudRepository<Security, Long> {
     @Query(
-            value = "select s.secid, s.regnumber, s.name, s.emitent_title, h.tradedate, h.numtrades, h.open, h.close " +
-                    " from security s join history h on s.secid = h.secid",
-            nativeQuery = true)
+            value = "select new zimareva.model.dto.StockMarketDTO(s.secid, s.regnumber, s.name, s.emitentTitle, h.tradedate, h.numtrades, h.open, h.close) " +
+                    " from Security s join History h on s.secid = h.secid")
     List<StockMarketDTO> findSecuritiesWithHistory();
 }

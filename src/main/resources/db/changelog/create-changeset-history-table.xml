@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="create_table_history" author="Zimareva">
+        <createTable tableName="history">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="secid" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tradedate" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="numtrades" type="double precision"/>
+            <column name="open" type="double precision"/>
+            <column name="close" type="double precision"/>
+        </createTable>
+    </changeSet>
+    <!--<changeSet id="add_fk_security_secid_to_history" author="Zimareva">
+        <addForeignKeyConstraint baseColumnNames="secid"
+                                 baseTableName="history"
+                                 constraintName="fk_security_secid"
+                                 referencedColumnNames="secid"
+                                 referencedTableName="security"
+                                 onDelete="CASCADE"/>
+    </changeSet>-->
+</databaseChangeLog>

@@ -1,20 +1,22 @@
 package zimareva.model.dto;
 
+import java.time.LocalDate;
+
 public class StockMarketDTO {
     private String secId;
     private String regnumber;
     private String name;
     private String emitentTitle;
-    private String numtrades;
-    private String tradedate;
-    private String open;
-    private String close;
+    private LocalDate tradedate;
+    private Double numtrades;
+    private Double open;
+    private Double close;
 
     public StockMarketDTO() {
     }
 
     public StockMarketDTO(String secId, String regnumber, String name, String emitentTitle,
-                          String numtrades, String tradedate, String open, String close) {
+                          LocalDate tradedate, Double numtrades,  Double open, Double close) {
         this.secId = secId;
         this.regnumber = regnumber;
         this.name = name;
@@ -57,35 +59,35 @@ public class StockMarketDTO {
         this.emitentTitle = emitentTitle;
     }
 
-    public String getNumtrades() {
+    public Double getNumtrades() {
         return numtrades;
     }
 
-    public void setNumtrades(String numtrades) {
+    public void setNumtrades(Double numtrades) {
         this.numtrades = numtrades;
     }
 
-    public String getTradedate() {
+    public LocalDate getTradedate() {
         return tradedate;
     }
 
-    public void setTradedate(String tradedate) {
+    public void setTradedate(LocalDate tradedate) {
         this.tradedate = tradedate;
     }
 
-    public String getOpen() {
+    public Double getOpen() {
         return open;
     }
 
-    public void setOpen(String open) {
+    public void setOpen(Double open) {
         this.open = open;
     }
 
-    public String getClose() {
+    public Double getClose() {
         return close;
     }
 
-    public void setClose(String close) {
+    public void setClose(Double close) {
         this.close = close;
     }
 }
