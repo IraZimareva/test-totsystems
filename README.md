@@ -1,5 +1,5 @@
 # Тестовое задание в компанию TOT systems
-**Стек технологий: Java8, Postgres, Hibernate, Spring Data, SpringBoot**
+**Стек технологий: Java8, Postgres, Liquibase, Hibernate, Spring Data, SpringBoot**
 
 > Чтобы запустить приложение необходимо иметь установленную СУБД PostgreSQL и в файле application.properties изменить дефолтные креды к бд на свои. По умолчанию используется стандартный порт 5432, суперюзер postges, для которого необходимо создать бд exchange (CREATE DATABASE exchange WITH OWNER = postgres). После старта приложение загружает исходные данные и дальше работает, как обычный REST-сервис
 
